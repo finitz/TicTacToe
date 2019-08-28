@@ -67,7 +67,7 @@ class Game {
     }
     
     
-    func updateBoard(_ board: inout [[String]], _ tuple: (Int, Int), _ player: Turn) {
+    func updateBoard(_ tuple: (Int, Int), _ player: Turn) {
         board[tuple.0][tuple.1] = player.rawValue
     }
     
@@ -98,7 +98,7 @@ class Game {
         move.x = Int(movArr[0])!
         move.y = Int(movArr[1])!
         
-        updateBoard(&board, move, playerTurn)
+        updateBoard(move, playerTurn)
         moveCount += 1
         printBoard(board)
         
